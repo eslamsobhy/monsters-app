@@ -8,8 +8,8 @@ import "./card-list.styles.css";
 const CardList = (props) => {
   return (
     <div className="card-list">
-      {props.monsters.map((monster) => {
-        return <Card monster={monster} />;
+      {props.monsters.map((monster, index) => {
+        return <Card key={index} monster={monster} />;
       })}
     </div>
   );
