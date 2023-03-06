@@ -13,9 +13,6 @@ class App extends Component {
       monsters: [],
       searchField: "",
     };
-
-    // we need to do this for every method we declare in order for us to fix the this object context bug!
-    // this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
@@ -24,6 +21,9 @@ class App extends Component {
       .then((users) => this.setState({ monsters: users }));
   }
 
+  // this-object will be binded in the place where the arrow function is defined in the first place,
+  // and the context of this arrow function is the App component.
+  // This is called lexical scoping.
   handleChange = (e) => {
     this.setState({ searchField: e.target.value });
   };
