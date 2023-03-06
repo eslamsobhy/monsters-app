@@ -15,7 +15,7 @@ class App extends Component {
     };
 
     // we need to do this for every method we declare in order for us to fix the this object context bug!
-    this.handleChange = this.handleChange.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
@@ -24,9 +24,9 @@ class App extends Component {
       .then((users) => this.setState({ monsters: users }));
   }
 
-  handleChange(e) {
+  handleChange = (e) => {
     this.setState({ searchField: e.target.value });
-  }
+  };
 
   render() {
     const { monsters, searchField } = this.state;
