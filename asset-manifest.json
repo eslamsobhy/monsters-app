@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/https//eslamsobhy.githup.io/monsters-app/static/css/main.f7a20df2.css",
+    "main.js": "/https//eslamsobhy.githup.io/monsters-app/static/js/main.50d4073d.js",
+    "index.html": "/https//eslamsobhy.githup.io/monsters-app/index.html",
+    "main.f7a20df2.css.map": "/https//eslamsobhy.githup.io/monsters-app/static/css/main.f7a20df2.css.map",
+    "main.50d4073d.js.map": "/https//eslamsobhy.githup.io/monsters-app/static/js/main.50d4073d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f7a20df2.css",
+    "static/js/main.50d4073d.js"
+  ]
+}
