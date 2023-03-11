@@ -3,6 +3,7 @@ import { Component } from "react";
 // components
 import CardList from "./components/card-list/CardList";
 import SearchBox from "./components/search-box/SearchBox";
+import Lifecycles from "./components/life-cycle/Lifecycles";
 
 import "./App.css";
 
@@ -13,6 +14,8 @@ class App extends Component {
       monsters: [],
       searchField: "",
       counter: 0 + this.props.increment,
+      showChild: true,
+      text: "",
     };
   }
 
@@ -61,6 +64,26 @@ class App extends Component {
       <div className="App">
         <p>{this.state.counter}</p>
         <button onClick={this.increment}>Increment</button>
+        <hr />
+        <button
+          onClick={() =>
+            this.setState((state) => ({ showChild: !state.showChild }))
+          }
+        >
+          Toggle Lifecycle
+        </button>
+
+        <button
+          onClick={() =>
+            this.setState((state) => ({ text: state.text + " _hello" }))
+          }
+        >
+          Update Text
+        </button>
+
+        {this.state.showChild && <Lifecycles text={this.state.text} />}
+        <hr />
+
         <h1>Monsters Rolodex</h1>
         <SearchBox
           placeholder="search monster"
