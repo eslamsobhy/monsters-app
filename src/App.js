@@ -39,7 +39,8 @@ class App extends Component {
     */
     this.setState(
       (prevState, prevProps) => {
-        return { counter: prevState.counter + 1 };
+        // instead of using this.props.increment:
+        return { counter: prevState.counter + prevProps.increment };
       },
       () => console.log(this.state.counter)
     );
