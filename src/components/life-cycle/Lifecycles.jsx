@@ -10,6 +10,18 @@ class Lifecycles extends Component {
     console.log("mounted!");
   }
 
+  componentDidUpdate() {
+    console.log("updated!");
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log("should component update?");
+    // if it returns false, that means it won't update(won't be rerendered)
+    // this could be important for performance if we know that this component..
+    // has nothing to do with the state chenged!
+    return true;
+  }
+
   render() {
     console.log("render!");
     return (
