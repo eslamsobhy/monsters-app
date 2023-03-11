@@ -32,15 +32,22 @@ class App extends Component {
   increment = () => {
     // this call of setState is asynchronous
     // when clicking the button that does not happen immediately
-    this.setState({ counter: this.state.counter + 1 }, () =>
-      console.log(this.state.counter)
+    /*
+      the best practice to update the state whenever we are using the prev value
+      of the state or the prev props is to use a function instead of an object;
+      like this:
+    */
+    this.setState(
+      (prevState, prevProps) => {
+        return { counter: prevState.counter + 1 };
+      },
+      () => console.log(this.state.counter)
     );
 
     // this log proves it, it still displays the previous value of the counter
     // even when we call it after incrementing the counter by one!!
     // to make sure that the log happens after updating the state:
     // just move it as the second param to the setState() in a callback function!
-    console.log(this.state.counter);
   };
 
   render() {
