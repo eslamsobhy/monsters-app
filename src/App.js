@@ -12,6 +12,7 @@ class App extends Component {
     this.state = {
       monsters: [],
       searchField: "",
+      counter: 0,
     };
   }
 
@@ -28,6 +29,16 @@ class App extends Component {
     this.setState({ searchField: e.target.value });
   };
 
+  increment = () => {
+    // this call of setState is asynchronous
+    // when clicking the button that does not happen immediately
+    this.setState({ counter: this.state.counter + 1 });
+
+    // this log proves it, it still displays the previous value of the counter
+    // even when we call it after incrementing the counter by one!!
+    console.log(this.state.counter);
+  };
+
   render() {
     const { monsters, searchField } = this.state;
     const filteredMonsters = monsters.filter((monster) =>
@@ -36,6 +47,8 @@ class App extends Component {
 
     return (
       <div className="App">
+        <p>{this.state.counter}</p>
+        <button onClick={this.increment}>Increment</button>
         <h1>Monsters Rolodex</h1>
         <SearchBox
           placeholder="search monster"
