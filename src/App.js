@@ -7,12 +7,12 @@ import SearchBox from "./components/search-box/SearchBox";
 import "./App.css";
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       monsters: [],
       searchField: "",
-      counter: 0,
+      counter: 0 + this.props.increment,
     };
   }
 
