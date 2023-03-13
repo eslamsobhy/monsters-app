@@ -22,6 +22,12 @@ class Lifecycles extends Component {
     return true;
   }
 
+  // gets called whenever we toggle displaying some components! (when the component is no longer there!)
+  // Also gets used cleaning the leftover data that the garbage collection can't access!
+  componentWillUnmount() {
+    console.log("Unmounted!");
+  }
+
   render() {
     console.log("render!");
     return (
