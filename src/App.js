@@ -62,7 +62,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <p>{this.state.counter}</p>
+        {/* <p>{this.state.counter}</p>
         <button onClick={this.increment}>Increment</button>
         <hr />
         <button
@@ -82,7 +82,7 @@ class App extends Component {
         </button>
 
         {this.state.showChild && <Lifecycles text={this.state.text} />}
-        <hr />
+        <hr /> */}
 
         <h1>Monsters Rolodex</h1>
         <SearchBox
